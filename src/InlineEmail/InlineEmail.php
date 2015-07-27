@@ -25,7 +25,7 @@ class InlineEmail {
 
 	}
 
-
+ 
 	/**
 	* Returns the value of a class else returns the string parameter itself.
 	*

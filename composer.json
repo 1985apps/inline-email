@@ -1,0 +1,8 @@
+{
+	"name": "1985apps/inline-email",
+	"autoload": {
+		"psr-0": {
+			"InlineEmail": "src"
+		}
+	}
+}

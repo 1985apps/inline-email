@@ -7,7 +7,7 @@ A Simple PHP library to generate HTML files with inline css while still using th
 
     $ composer require 1985apps/inline-email:dev-master
 
-    $ "requries" : {
+    "requries" : {
         "1985apps/inline-email": "dev-master"
     }
 
@@ -22,15 +22,44 @@ A Simple PHP library to generate HTML files with inline css while still using th
 	require_once "path/to/src/InlineEmail/InlineEmail.php";
 	$i = new InlineEmail\InlineEmail("style.php");
 
-### mail.php
-    require_once "<in any manner>";
-    
+***
+### Files and configuration 
+There are 2 files that need to be setup
+- mail.php - File which contains the HTML
+- style.php - File which contains the CSS Styling
+
+**mail.php**
+
+*This file should contain the HTML structure that you want generated*
+
+    <?
+        require_once "vendor/autoload.php";
+        $i = InlineEmail\InlineEmail("./style.php");
+    ?>
     <div <?= $i->style(["email-container"] ?>>
-        <div <?= $i->style(["bold"]) ?>>I am a bold line</div>
+        <div <?= $i->style(["bold", "red", "font-size: 12px"]) ?>>I am bold, red and 12</div>
     </div>
 
-Generates:
+**style.php**
+
+*This files should return a associative array of classnames to css specifications*
+
+    <?
+    return [
+        "bold" => "font-weight: bold",
+        "red" => "color: red",
+        "box" => "border: 1px solid red"
+    ];
+    
+### Generate HTML
+Run the below command to generate a HTML file
+
+    $ php mail.php > mail.html
+    
+Generates
 
     <div style="max-width: 600px">
-        <div style="font-weight: bold">I am a bold line</div>        
+        <div style="font-weight: bold; color: red; font-size: 12px">I am bold, red and 12
     </div>
+    
+Thats it ! 

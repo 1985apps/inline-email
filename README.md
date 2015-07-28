@@ -7,7 +7,7 @@ A Simple PHP library to generate HTML files with inline css while still using th
 
     $ composer require 1985apps/inline-email:dev-master
 
-    "requries" : {
+    $ "requries" : {
         "1985apps/inline-email": "dev-master"
     }
 
@@ -61,5 +61,9 @@ Generates
     <div style="max-width: 600px">
         <div style="font-weight: bold; color: red; font-size: 12px">I am bold, red and 12
     </div>
+
+### defaults.style.php
+
+inline-email is shipped with a few standard default css classes. They are found in src/InlineEmail/defaults.style.php
     
 Thats it ! 

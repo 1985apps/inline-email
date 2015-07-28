@@ -15,18 +15,18 @@ A Simple PHP library to generate HTML files with inline css while still using th
 ### Composer
 
 	require_once "vendor/autoload.php";
-	$i = new InlineEmail\InlineEmail("style.php");
+	$i = new InlineEmail\InlineEmail("<path/to/style.php>");
 
 ### Without Composer
 
 	require_once "path/to/src/InlineEmail/InlineEmail.php";
-	$i = new InlineEmail\InlineEmail("style.php");
+	$i = new InlineEmail\InlineEmail("<path/to/style.php>");
 
 ***
 ### Files and configuration 
 There are 2 files that need to be setup
 - mail.php - File which contains the HTML
-- style.php - File which contains the CSS Styling
+- style.php - File which contains the CSS styling
 
 **mail.php**
 
@@ -42,7 +42,7 @@ There are 2 files that need to be setup
 
 **style.php**
 
-*This files should return a associative array of classnames to css specifications*
+*This file should return a associative array of classnames to css specifications*
 
     <?
     return [
@@ -66,4 +66,4 @@ Generates
 
 inline-email is shipped with a few standard default css classes. They are found in src/InlineEmail/defaults.style.php
     
-Thats it ! 
+Thats it ! And we love pull requests :) Feel free to improve on our library and we will be happy to merge it into master.
